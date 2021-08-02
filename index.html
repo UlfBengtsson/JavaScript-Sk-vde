@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My First JavaScript page</title>
+  </head>
+  <body>
+    <h1>Greeting´s !!!</h1>
+
+    <div id="content">
+      <button onclick="changeToBackground('red')">Red</button>
+      <button onclick="changeToBackground('blue')">Blue</button>
+      <button id="greenBtn">Green</button>
+    </div>
+
+    <script>
+      document.body.style.backgroundColor = "lightgray";
+
+      var myContent = document.getElementById("content");
+
+      myContent.style.height = "100px";
+      myContent.style.width = "100px";
+      myContent.style.backgroundColor = "white";
+
+      function changeToBackground(colorTo) {
+        myContent.style.backgroundColor = colorTo;
+      }
+
+      document
+        .getElementById("greenBtn")
+        .addEventListener("click", function () {
+          changeToBackground("green");
+        });
+      /*
+      document.getElementById("greenBtn").addEventListener("click", () => {
+        changeToBackground("green");
+      });
+      
+      function changeToRed() {
+        myContent.style.backgroundColor = "red";
+      }
+
+      function changeToBlue() {
+        myContent.style.backgroundColor = "blue";
+      }
+    */
+    </script>
+  </body>
+</html>
