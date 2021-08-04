@@ -3,47 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <title>My First JavaScript page</title>
+    <link rel="stylesheet" href="/css/site.css" />
   </head>
   <body>
     <h1>Greeting´s !!!</h1>
 
-    <div id="content">
-      <button onclick="changeToBackground('red')">Red</button>
-      <button onclick="changeToBackground('blue')">Blue</button>
-      <button id="greenBtn">Green</button>
-    </div>
+    <button onclick="addColoredBlock('red')">Red</button>
+    <button onclick="addColoredBlock('blue')">Blue</button>
+    <button id="greenBtn">Green</button>
+
+    <div id="content"></div>
 
     <script>
       document.body.style.backgroundColor = "lightgray";
 
       var myContent = document.getElementById("content");
 
-      myContent.style.height = "100px";
-      myContent.style.width = "100px";
+      myContent.style.height = "300px";
+      myContent.style.width = "300px";
       myContent.style.backgroundColor = "white";
 
-      function changeToBackground(colorTo) {
-        myContent.style.backgroundColor = colorTo;
+      function addColoredBlock(colorTo) {
+        let newBlock = document.createElement("div");
+        newBlock.classList.add("block");
+
+        switch (colorTo) {
+          case "green":
+            newBlock.classList.add("green");
+            break;
+          case "red":
+            newBlock.classList.add("red");
+            break;
+          case "blue":
+            newBlock.classList.add("blue");
+            break;
+        }
+
+        myContent.appendChild(newBlock);
       }
 
       document
         .getElementById("greenBtn")
         .addEventListener("click", function () {
-          changeToBackground("green");
+          addColoredBlock("green");
         });
-      /*
-      document.getElementById("greenBtn").addEventListener("click", () => {
-        changeToBackground("green");
-      });
-      
-      function changeToRed() {
-        myContent.style.backgroundColor = "red";
-      }
-
-      function changeToBlue() {
-        myContent.style.backgroundColor = "blue";
-      }
-    */
     </script>
   </body>
 </html>

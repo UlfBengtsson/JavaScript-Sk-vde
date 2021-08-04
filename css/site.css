@@ -1,0 +1,17 @@
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.block {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
