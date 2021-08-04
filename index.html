@@ -11,42 +11,10 @@
     <button onclick="addColoredBlock('red')">Red</button>
     <button onclick="addColoredBlock('blue')">Blue</button>
     <button id="greenBtn">Green</button>
+    <button onclick="ticTacToc()">Tic Tac Toc</button>
 
     <div id="content"></div>
 
-    <script>
-      document.body.style.backgroundColor = "lightgray";
-
-      var myContent = document.getElementById("content");
-
-      myContent.style.height = "300px";
-      myContent.style.width = "300px";
-      myContent.style.backgroundColor = "white";
-
-      function addColoredBlock(colorTo) {
-        let newBlock = document.createElement("div");
-        newBlock.classList.add("block");
-
-        switch (colorTo) {
-          case "green":
-            newBlock.classList.add("green");
-            break;
-          case "red":
-            newBlock.classList.add("red");
-            break;
-          case "blue":
-            newBlock.classList.add("blue");
-            break;
-        }
-
-        myContent.appendChild(newBlock);
-      }
-
-      document
-        .getElementById("greenBtn")
-        .addEventListener("click", function () {
-          addColoredBlock("green");
-        });
-    </script>
+    <script src="/js/my_script.js"></script>
   </body>
 </html>
